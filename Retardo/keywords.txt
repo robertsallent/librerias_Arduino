@@ -1,0 +1,4 @@
+Retardo  KEYWORD1
+comprobar   KEYWORD2
+setTiempo   KEYWORD2
+reiniciar   KEYWORD2

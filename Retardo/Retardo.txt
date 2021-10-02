@@ -1,0 +1,34 @@
+Clase para programar retardos no bloqueantes
+
+Autor: Robert Sallent 
+Curso: programación de placas robóticas en CIFO Sabadell 
+Versión: 1.1 - La clase Retardo
+ 
+ --------------------------------- USO -----------------------------------
+
+- Primero, crearemos un objeto Retardo con el tiempo.
+
+EJEMPLO:
+Retardo r1(5000);  // r1 es un retardo de 5 segundos
+
+- A partir de ese momento, podremos usar el método comprobar() para saber si ha pasado el tiempo o no,
+  esto lo haremos desde el método loop(), por ejemplo:
+
+EJEMPLO:
+if(r1.comprobar()){
+   // código a ejecutar;
+}
+
+- Se puede cambiar el tiempo de retardo usando el método setTiempo(), por ejemplo
+
+EJEMPLO:
+r1.setTiempo(10000); // hace que el retardo r1 pase a ser de 10 segundos.
+
+
+- También se puede reiniciar el temporizador, usando el método reiniciar(). De esta forma, si quedaban
+  500ms para cumplir un tiempo de 2000ms, tras usar reiniciar() volverán a faltar 2000ms.
+
+EJEMPLO
+r1.reiniciar();
+
+

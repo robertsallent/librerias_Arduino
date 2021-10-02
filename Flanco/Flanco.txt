@@ -1,0 +1,61 @@
+Clase para detectar flancos de subida o bajada
+
+Autor: Robert Sallent 
+Curso: programación de placas robóticas en CIFO Sabadell 
+Versión: 2.4 - La clase Flanco
+ 
+
+================================================================================================
+
+
+CREACIÓN DEL OBJETO FLANCO
+--------------------------
+Primero, crearemos un objeto Flanco para cada elemento que queramos analizar.
+Por ejemplo, si tenemos un botón en el pin 8 que queremos vigilar a lo largo
+de todo el programa, haremos una variable global así:
+
+Flanco fboton(8);
+
+
+
+USO DEL MÉTODO detectar()
+--------------------------
+Desde el método loop(), podemos detectar si se ha producido algún flanco haciendo:
+
+fboton.detectar()
+
+Este método retorna -1 para un fanco de bajada, 0 si no hay flanco y 1 para un flanco de subida.
+
+Se han definido también tres constantes para cada uno de esos valores:
+FLANCO_BAJADA
+NO_FLANCO
+FLANCO_SUBIDA
+
+Ejemplo de uso: 
+ 
+ if(fboton.detectar()==FLANCO_BAJADA)
+     Serial.print("Detectado flanco de bajada.");
+
+
+
+
+USO DE LOS MÉTODOS subida() Y bajada()
+--------------------------------------
+
+Existen dos métodos adicionales para simplificar la comparación.
+Los métodos subida() y bajada() retornan true o false en función de si se ha producido
+el flanco de subida/bajada.
+
+Ejemplo de uso para detectar flanco de subida:
+
+if(fboton.subida())
+     Serial.print("Detectado flanco de subida.");
+
+
+Ejemplo de uso para detectar flanco de bajada:
+
+if(fboton.bajada())
+     Serial.print("Detectado flanco de bajada.");
+
+ 
+
